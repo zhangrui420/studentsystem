@@ -1,0 +1,26 @@
+public void del() {
+		while (true) {
+			System.out.println("输入学生编号：");
+			int id = in.nextInt();
+			boolean flag = false;
+			for (int i = 0; i < studentList.size(); i++) {
+				Students student = studentList.get(i);
+				if (student.getId() == id) {
+					studentList.remove(i);
+					flag = true;
+					break;
+				}
+			}
+			if (!flag) {
+				System.out.println("删除失败,未找到该学生信息，按0表示退出，其他则继续！");
+			} else {
+
+				System.out.println("删除成功,是否继续移除，按0表示退出，其他则继续！");
+			}
+			String info = in.next();
+			if ("0".equals(info)) {
+				break;
+			}
+		}
+
+	}
