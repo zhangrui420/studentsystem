@@ -1,0 +1,47 @@
+public void add() {
+
+		while (true) {
+			System.out.println("输入学生编号：");
+			int id = in.nextInt();
+			
+			boolean flag = false;
+			for (int i = 0; i < studentList.size(); i++) {
+				Students student = studentList.get(i);
+				if (student.getId() == id) {
+					flag = true;
+					break;
+				}
+			}
+			
+			if(flag){
+				System.out.println("学号重复！");
+				break;
+			}
+			
+			System.out.println("输入学生姓名：");
+			String name = in.next();
+			System.out.println("输入学生出生年月：");
+			String birDate = in.next();
+			System.out.println("输入学生性别：");
+			String sex = in.next();
+
+			
+			Students s = new Students();
+			s.setId(id);
+			s.setName(name);
+			s.setBirDate(birDate);
+			
+			if("男".equals(sex)){
+				s.setGender(true);
+			}else{
+				s.setGender(false);
+			}
+			
+			studentList.add(s);
+			System.out.println("添加成功,是否继续添加，按0表示退出，其他则继续！");
+			String info = in.next();
+			if ("0".equals(info)) {
+				break;
+			}
+		}
+	}
