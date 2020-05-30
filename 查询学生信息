@@ -1,0 +1,33 @@
+public void query() {
+		if(studentList==null || studentList.size()==0){
+			System.out.println("暂无学生信息,请前往添加");
+			return;
+		}
+		System.out.println("请输入要查询的学号：");
+		int id = in.nextInt();
+		boolean flag = false;
+		for (int i = 0; i < studentList.size(); i++) {
+			Students student = studentList.get(i);
+			if (student.getId() == id) {
+				System.out.println(student.toString());
+				flag = true;
+				break;
+			}
+		}
+		if(!flag){
+			System.out.println("学生不存在！");
+			return;
+		}
+		
+	}
+  public void show() {
+		
+		for (int i = 0; i < studentList.size(); i++) {
+			Students student = studentList.get(i);
+			System.out.println(student.toString());	
+		}
+		if(studentList==null || studentList.size()==0){
+			System.out.println("暂无学生信息");
+		}
+		
+	}
